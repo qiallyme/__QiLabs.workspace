@@ -1,0 +1,33 @@
+version: 1
+
+inputs:
+  front_matter_csv: "data/sheets/front_matter_schema_v1.csv"
+  realms_csv: "data/sheets/realms_registry.csv"
+  realms_yaml: "rules/realms_registry.yaml"
+  folders_yaml: "rules/folder_registry.yaml"
+  rules_csv: "data/sheets/qios_rules_v1_1.csv"
+  rules_yaml: "rules/qios_rules_v1_1.yaml"
+  sensitivity_registry_csv: "data/sheets/sensitivity_classification_registry.csv"
+  sensitivity_matrix_csv: "data/sheets/sensitivity_classification_matrix_v1.csv"
+  ignore_yaml: "rules/fs_ignore.yaml"
+  matrix_csv: "data/sheets/qios_matrix.csv"
+
+output:
+  constitution_json: "data/compiled/qios_constitution_v1.json"
+  compile_log_json: "data/outputs/qicompiler_log.json"
+
+precedence:
+  realms: "yaml_over_csv"
+  rules: "yaml_over_csv"
+
+enforcement:
+  fail_on_conflict: true
+  require_three_letter_prefix: true
+  forbid_absolute_paths: true
+  require_realm_enable_flag: true
+
+defaults:
+  realm_enabled: true
+  folder_realm_mirror: true
+  folder_client_excluded: false
+

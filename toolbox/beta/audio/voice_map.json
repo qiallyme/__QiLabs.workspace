@@ -1,0 +1,5 @@
+{
+  "NARRATOR": { "engine": "piper", "voice": "en_US-lessac-medium" },
+  "LISA":     { "engine": "piper", "voice": "en_US-amy-medium" },
+  "JOEL":     { "engine": "piper", "voice": "en_US-bryce-medium" }
+}

@@ -1,0 +1,47 @@
+id: toolbox.finance.zai_ledger_importer
+name: Zai Ledger Importer
+type: toolbox_tool
+language: python
+status: active
+owner: QiLabs
+
+module:
+  package: tools.finance.zai_ledger_importer
+  file: zai_ledger_importer.py
+  class_name: ZaiLedgerImporterTool
+  entrypoint: ZaiLedgerImporterTool
+
+toolbox:
+  ui_enabled: true
+  bucket: finance
+  category: finance
+  launch_surface:
+    - QiOne Desktop Tools
+  requires_target_directory: false
+
+runtime:
+  requires_network: true
+  requires_secrets: true
+  dependencies:
+    - requests
+
+safety:
+  supports_dry_run: true
+  supports_live_run: true
+  deletes_files: false
+  moves_files: false
+  modifies_files: false
+  writes_generated_files: false
+  review_before_live: true
+
+paths:
+  source: tools/finance/zai_ledger_importer/zai_ledger_importer.py
+  readme: tools/finance/zai_ledger_importer/README.md
+
+tags:
+  - toolbox
+  - finance
+  - firefly
+  - ledger
+  - transactions
+

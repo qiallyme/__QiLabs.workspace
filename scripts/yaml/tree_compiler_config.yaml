@@ -1,0 +1,62 @@
+version: 1.0.0
+description: Configuration for QiOS Directory Tree Compiler
+
+# Registry paths (relative to QiOS_v1 root)
+registries:
+  realms: data/sheets/realms_registry.csv
+  folders: rules/folder_registry.yaml
+  rules: data/sheets/qios_rules_v1_1.csv
+  readme: data/sheets/readme_registry_v1.yaml
+
+# Output settings
+output:
+  log_dir: data/outputs
+  log_file: tree_compile_log.json
+
+# Behavior flags
+behavior:
+  idempotent: true  # Running twice does not create duplicates
+  create_readmes: true  # Generate README placeholders
+  skip_existing: true  # Skip folders/files that already exist
+
+# Realm subtree generation
+realm_subtrees:
+  # Common subtrees applied to all realms
+  common:
+    - kb
+    - data
+    - assets
+    - assets/images
+    - assets/videos
+    - assets/audio
+    - assets/documents
+  
+  # Realm-specific overrides (keyed by realm_slug)
+  overrides:
+    qibusiness:
+      - assets/images/branding
+      - assets/images/social
+      - assets/videos/ads
+      - assets/videos/demos
+    
+    qiclients_template:
+      - data/sheets
+      - data/cache
+      - apps
+      - workers
+      - workflows
+      - rules
+      - security
+      - connections
+      - sites/astro/src
+      - sites/astro/content
+      - sites/astro/public
+      - sites/astro/scripts
+      - projects/active
+      - projects/archived
+      - sys/config
+      - sys/policies
+      - sys/routing
+      - .meta
+      - .archive
+

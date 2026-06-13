@@ -1,0 +1,52 @@
+id: toolbox.dev.repo_triage
+name: Repo Triage
+type: toolbox_tool
+language: python
+status: active
+owner: QiLabs
+
+module:
+  package: tools.dev.repo_triage
+  file: repo_triage.py
+  class_name: RepoTriageTool
+  entrypoint: RepoTriageTool
+
+toolbox:
+  ui_enabled: true
+  bucket: dev
+  category: dev
+  launch_surface:
+    - QiOne Desktop Tools
+  requires_target_directory: true
+
+runtime:
+  requires_network: false
+  requires_secrets: false
+  dependencies:
+    - python_stdlib
+
+safety:
+  supports_dry_run: true
+  supports_live_run: true
+  deletes_files: false
+  moves_files: true
+  modifies_files: true
+  writes_generated_files: true
+  review_before_live: true
+
+paths:
+  source: tools/dev/repo_triage/repo_triage.py
+  readme: tools/dev/repo_triage/README.md
+
+outputs:
+  - repo inventory text files
+  - quarantine moves
+  - gitignore hygiene block
+
+tags:
+  - toolbox
+  - dev
+  - repo
+  - hygiene
+  - triage
+

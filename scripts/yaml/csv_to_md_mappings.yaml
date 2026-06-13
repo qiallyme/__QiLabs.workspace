@@ -1,0 +1,25 @@
+# 1_QiEos/1.50_Meta/metadata/csv_to_md_mappings.yaml
+version: 1.0.0
+description: Default and domain-specific mapping presets for CSV→MD conversions.
+last_updated: 2025-11-04
+maintainer: CRV
+
+presets:
+  default:
+    qi_decimal: 7.10.03-01.SYS
+    owner: CRV
+    mapping:
+      title: Title
+      date: Created
+      tags: Labels
+      summary: Summary
+      content_cols: [Body, Notes]
+  crm_intake:
+    qi_decimal: 7.10.03-02.SYS
+    owner: CRV
+    mapping:
+      title: Client
+      date: IntakeDate
+      tags: Type
+      summary: Description
+      content_cols: [Notes]

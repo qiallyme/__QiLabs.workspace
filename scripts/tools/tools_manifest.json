@@ -1,0 +1,244 @@
+{
+  "version": "2.0.0",
+  "updated": "2025-01-27",
+  "description": "QiOS Tools Manifest - Core tools for GINA and system operations",
+  
+  "core_tools": [
+    {
+      "id": "add_frontmatter",
+      "name": "Add Front Matter",
+      "path": "python/core/add_frontmatter.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Intelligently adds/merges QiOS-compliant front matter to markdown files without overwriting existing metadata",
+      "usage": "python tools/python/core/add_frontmatter.py --kb-root \"realms/qivault/kb\" [--dry-run] [--limit N]",
+      "gina_compatible": true,
+      "cli_args": ["--kb-root", "--dry-run", "--limit"]
+    },
+    {
+      "id": "generate_indexes",
+      "name": "Generate Indexes",
+      "path": "python/core/generate_indexes.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Creates index files for every folder in the knowledge base, listing all subfolders and files. Generates a master index at the root.",
+      "usage": "python tools/python/core/generate_indexes.py --kb-root \"realms/qivault/kb\" [--dry-run] [--index-name \"_INDEX.md\"]",
+      "gina_compatible": true,
+      "cli_args": ["--kb-root", "--dry-run", "--index-name"]
+    },
+    {
+      "id": "organize_vault_structure",
+      "name": "Organize Vault Structure",
+      "path": "python/core/organize_vault_structure.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Mirrors kb/ folder structure in docs/, data/, and assets/. Moves files to proper locations and creates reference files in kb/ that link to related materials.",
+      "usage": "python tools/python/core/organize_vault_structure.py --vault-root \"realms/qivault\" [--dry-run]",
+      "gina_compatible": true,
+      "cli_args": ["--vault-root", "--dry-run"]
+    }
+  ],
+  
+  "deduplication_tools": [
+    {
+      "id": "find_duplicates",
+      "name": "Find Duplicates",
+      "path": "python/find_duplicates.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Finds duplicate files by filename and/or content hash. Generates a markdown report for review.",
+      "usage": "python tools/python/find_duplicates.py --root \"realms/qivault/kb\" [--folder \"7_Tech\"] [--check-content] [--output \"path/to/report.md\"]",
+      "gina_compatible": true,
+      "cli_args": ["--root", "--folder", "--check-content", "--output"]
+    },
+    {
+      "id": "qios_dedup_tool",
+      "name": "QiOS Deduplication Tool",
+      "path": "python/qios_dedup_tool.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Advanced interactive deduplication tool with staged processing. Function-based design for GINA integration.",
+      "usage": "python tools/python/qios_dedup_tool.py",
+      "gina_compatible": true,
+      "note": "Designed with function-based architecture for programmatic use"
+    }
+  ],
+  
+  "structure_tools": [
+    {
+      "id": "tree_compiler",
+      "name": "Tree Compiler",
+      "path": "python/tree_compiler.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Generates canonical QiOS folder tree from registries. Creates root folders, realm subtrees, and README placeholders.",
+      "usage": "python tools/python/tree_compiler.py [--dry-run]",
+      "gina_compatible": true,
+      "cli_args": ["--dry-run"]
+    },
+    {
+      "id": "qicompiler",
+      "name": "Qi Compiler",
+      "path": "python/qicompiler.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Compiles QiOS structure and configurations",
+      "usage": "python tools/python/qicompiler.py",
+      "gina_compatible": true
+    }
+  ],
+  
+  "dev_error_memory": [
+    {
+      "id": "sync_errors_to_markdown",
+      "name": "Sync Errors to Markdown",
+      "path": "python/sync_errors_to_markdown.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Syncs dev errors from Supabase to DEV_ERRORS.md files in repo directories for Cursor context",
+      "usage": "python tools/python/sync_errors_to_markdown.py [--directory DIR] [--limit N]",
+      "gina_compatible": true,
+      "cli_args": ["--directory", "--limit"]
+    },
+    {
+      "id": "log_error_to_supabase",
+      "name": "Log Error to Supabase",
+      "path": "python/log_error_to_supabase.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Logs a development error to Supabase dev_error_log table",
+      "usage": "python tools/python/log_error_to_supabase.py --file-path PATH --error-type TYPE --error-message MESSAGE [--tags TAGS]",
+      "gina_compatible": true,
+      "cli_args": ["--file-path", "--error-type", "--error-message", "--tags", "--fix-summary"]
+    },
+    {
+      "id": "get_file_error_context",
+      "name": "Get File Error Context",
+      "path": "python/get_file_error_context.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Retrieves error history and context for a specific file",
+      "usage": "python tools/python/get_file_error_context.py --file-path PATH [--limit N]",
+      "gina_compatible": true,
+      "cli_args": ["--file-path", "--limit"]
+    },
+    {
+      "id": "mark_error_resolved",
+      "name": "Mark Error Resolved",
+      "path": "python/mark_error_resolved.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Marks a dev error as resolved in Supabase",
+      "usage": "python tools/python/mark_error_resolved.py --error-id ID [--fix-summary SUMMARY]",
+      "gina_compatible": true,
+      "cli_args": ["--error-id", "--fix-summary"]
+    }
+  ],
+  
+  "queue_management": [
+    {
+      "id": "queue_loader",
+      "name": "Queue Loader",
+      "path": "python/queue_loader.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Reads fs_scan_events.jsonl and inserts/updates ingestion_queue in Supabase. Handles deduplication by file_path.",
+      "usage": "python tools/python/queue_loader.py [--events-path PATH] [--dry-run]",
+      "gina_compatible": true,
+      "cli_args": ["--events-path", "--dry-run"]
+    },
+    {
+      "id": "fs_scanner",
+      "name": "File System Scanner",
+      "path": "python/fs_scanner.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Scans file system and generates fs_scan_events.jsonl for queue loading",
+      "usage": "python tools/python/fs_scanner.py [--root PATH] [--output PATH]",
+      "gina_compatible": true,
+      "cli_args": ["--root", "--output"]
+    }
+  ],
+  
+  "governance_tools": [
+    {
+      "id": "linter",
+      "name": "QiOS Linter",
+      "path": "python/audit/linter.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Enforces QiOS governance rules: naming, front matter, realms, structure. Core governance enforcement tool.",
+      "usage": "python tools/python/audit/linter.py [--root PATH] [--fix] [--dry-run]",
+      "gina_compatible": true,
+      "cli_args": ["--root", "--fix", "--dry-run"]
+    },
+    {
+      "id": "linterrunner",
+      "name": "Linter Runner",
+      "path": "python/audit/linterrunner.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Runs linter across multiple directories or the entire system",
+      "usage": "python tools/python/audit/linterrunner.py [--paths PATH1 PATH2]",
+      "gina_compatible": true,
+      "cli_args": ["--paths"]
+    }
+  ],
+  
+  "data_tools": [
+    {
+      "id": "csv_to_md",
+      "name": "CSV to Markdown Converter",
+      "path": "python/csv-to-md/csv_to_md.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Converts CSV files to markdown with front matter mapping. Obsidian-friendly output.",
+      "usage": "python tools/python/csv-to-md/csv_to_md.py --csv PATH --output DIR [--mapping PATH]",
+      "gina_compatible": true,
+      "cli_args": ["--csv", "--output", "--mapping"]
+    }
+  ],
+  
+  "local_file_ops": [
+    {
+      "id": "unzip_goblin",
+      "name": "Unzip Goblin",
+      "path": "local/file_ops/unzip_goblin/tool.json",
+      "scope": "local",
+      "enabled": true,
+      "description": "Local file operations tool for unzipping and processing archives",
+      "gina_compatible": true
+    }
+  ],
+  
+  "utility_tools": [
+    {
+      "id": "check_md",
+      "name": "Check Markdown",
+      "path": "python/audit/check-md.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Validates markdown files for front matter compliance and structure",
+      "usage": "python tools/python/audit/check-md.py [--root PATH]",
+      "gina_compatible": true,
+      "cli_args": ["--root"]
+    },
+    {
+      "id": "fix_spaces",
+      "name": "Fix Spaces",
+      "path": "python/audit/fix-spaces.py",
+      "scope": "python",
+      "enabled": true,
+      "description": "Fixes spacing issues in file names and content",
+      "usage": "python tools/python/audit/fix-spaces.py [--root PATH] [--dry-run]",
+      "gina_compatible": true,
+      "cli_args": ["--root", "--dry-run"]
+    }
+  ],
+  
+  "notes": {
+    "gina_compatibility": "Tools marked with gina_compatible: true have proper CLI interfaces, error handling, and can be invoked programmatically by GINA",
+    "removed_tools": "Many duplicate and one-off tools have been moved to .trash/ directory. See consolidation log for details.",
+    "future_enhancements": "Remaining tools should be reviewed for GINA compatibility improvements: adding argparse, error handling, and function-based design where needed"
+  }
+}

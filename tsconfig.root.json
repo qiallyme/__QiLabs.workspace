@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "QiOne Root",
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "references": [
+    { "path": "./apps/qione" },
+    { "path": "./packages/ui" },
+    { "path": "./packages/utils" },
+    { "path": "./packages/database" },
+    { "path": "./packages/auth" },
+    { "path": "./packages/config" },
+    { "path": "./packages/email" },
+    { "path": "./packages/sdk" },
+    { "path": "./packages/ai" },
+    { "path": "./packages/qinode" },
+    { "path": "./packages/obsidian-engine" },
+    { "path": "./packages/assets" }
+  ]
+}

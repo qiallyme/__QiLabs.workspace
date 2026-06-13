@@ -1,0 +1,41 @@
+id: toolbox.dev.export_blueprint
+name: Export Blueprint
+type: toolbox_tool
+language: python
+status: active
+owner: QiLabs
+
+module:
+  package: tools.dev.export_blueprint
+  file: export_blueprint.py
+  class_name: ExportBlueprintTool
+  entrypoint: ExportBlueprintTool
+
+toolbox:
+  ui_enabled: true
+  bucket: dev
+  category: dev
+  launch_surface:
+    - QiOne Desktop Tools
+  requires_target_directory: true
+
+runtime:
+  requires_network: false
+  requires_secrets: false
+
+safety:
+  supports_dry_run: true
+  supports_live_run: true
+  deletes_files: unknown
+  moves_files: unknown
+  modifies_files: unknown
+  review_before_live: true
+
+paths:
+  source: tools/dev/export_blueprint/export_blueprint.py
+  readme: tools/dev/export_blueprint/README.md
+
+tags:
+  - toolbox
+  - dev
+  - qione

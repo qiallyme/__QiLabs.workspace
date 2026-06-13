@@ -1,0 +1,51 @@
+id: toolbox.system.sys_docs_compiler
+name: Tree-Aware Docs Compiler
+type: toolbox_tool
+language: python
+status: active
+owner: QiLabs
+
+module:
+  package: tools.system.sys_docs_compiler
+  file: sys_docs_compiler.py
+  class_name: SysDocsCompilerTool
+  entrypoint: SysDocsCompilerTool
+
+toolbox:
+  ui_enabled: true
+  bucket: system
+  category: system
+  launch_surface:
+    - QiOne Desktop Tools
+  requires_target_directory: true
+
+runtime:
+  requires_network: false
+  requires_secrets: false
+  dependencies:
+    - python_stdlib
+
+safety:
+  supports_dry_run: true
+  supports_live_run: true
+  deletes_files: false
+  moves_files: false
+  modifies_files: true
+  writes_generated_files: true
+  review_before_live: true
+
+paths:
+  source: tools/system/sys_docs_compiler/sys_docs_compiler.py
+  readme: tools/system/sys_docs_compiler/README.md
+
+outputs:
+  - generated docs folder
+  - build report json
+
+tags:
+  - toolbox
+  - system
+  - docs
+  - compiler
+  - markdown
+

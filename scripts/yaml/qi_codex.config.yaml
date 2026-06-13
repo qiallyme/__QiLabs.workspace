@@ -1,0 +1,52 @@
+qi_codex:
+  sheet_csv_url: "https://docs.google.com/spreadsheets/d/1nBQb5bzvp_nAWL_hP9ltEy5pLv3EfbIihC-Df3JuXVo/export?format=csv"
+  local_csv: "1_QiEos/1.50_Meta/codex/QiCodex.csv"
+  local_md_index: "1_QiEos/1.50_Meta/codex/QiCodex_Index.md"
+
+  # Required columns in the Codex CSV
+  required_columns:
+    - QiDecimal
+    - Name
+    - Realm
+    - Owner
+    - Description
+    - Status
+    - Version
+    - Path
+    - Tags
+
+  # Pattern pieces for QiDecimal
+  # Generic pattern: AAA.BB.CC-SS.TYPE   (digits, zero-padded)
+  pattern:
+    prefix_segments: 3      # AAA.BB.CC
+    prefix_pad: 2
+    sequence_pad: 2         # SS
+    default_type: "SYS"
+
+  # Where to scan notes for validation
+  scan_roots:
+    - "2_QsKb"
+    - "3_QiKb"
+    - "4_Clients"
+    - "5_Apps"
+    - "6_Data"
+    - "7_Tools"
+
+  # File validation rules
+  rules:
+    require_front_matter: true
+    require_fields: [title, slug, realm, owner, privacy]
+    require_qi_decimal: false         # allow missing, suggest on validate
+    enforce_slug_from_title: true
+    enforce_privacy_default_by_realm:
+      "2_QsKb": "private"
+      "3_QiKb": "shared"
+      "4_Clients": "shared"
+      "5_Apps": "shared"
+      "6_Data": "private"
+      "7_Tools": "shared"
+
+  # Index rendering options
+  index:
+    columns: [QiDecimal, Name, Realm, Owner, Status, Version, Path, Tags]
+    group_by: Realm

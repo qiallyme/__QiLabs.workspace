@@ -1,0 +1,33 @@
+# QiOne RAG Routing Configuration
+# Defines how realms, domains, and doc types map into AI indexes.
+
+indexes:
+  eos-governance:
+    realms: [eos]
+    include_file_doc_types: [protocol, reference]
+    exclude_tags: [meta]
+    ai_visibility: [internal, private]
+
+  system-kb:
+    realms: [eos, tech, fin, ethic]
+    include_file_doc_types: [reference, kb]
+    exclude_tags: [meta]
+    ai_visibility: [internal]
+
+  client-immigration:
+    domains: [immigration]
+    include_file_doc_types: [kb, sop, checklist]
+    exclude_tags: [meta]
+    ai_visibility: [internal]
+
+  finance-tax:
+    domains: [finance, tax-returns]
+    include_file_doc_types: [kb, sop, reference]
+    exclude_tags: [meta]
+    ai_visibility: [internal]
+
+  personal-kb:
+    security_realms: [personal]
+    include_file_doc_types: [kb, log]
+    exclude_tags: [meta]
+    ai_visibility: [private]

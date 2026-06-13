@@ -1,0 +1,26 @@
+name: Docs
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check docs source
+        run: python scripts/docs_build/sys_docs_compiler.py --root . --target 00_QiAccess/docs --check
+
+      - name: Build generated docs
+        run: python scripts/docs_build/sys_docs_compiler.py --root . --target 00_QiAccess/docs --build

@@ -1,0 +1,64 @@
+{
+  "site_title": "QiLabs Documentation",
+  "exclude_dirs": [
+    ".git",
+    ".github",
+    ".vscode",
+    ".qios/tmp",
+    "node_modules",
+    ".next",
+    "dist",
+    "build",
+    ".cache",
+    "__pycache__",
+    ".venv",
+    "venv",
+    "env",
+    ".pytest_cache",
+    "99_QiProject_Receipts",
+    "aider_test"
+  ],
+  "exclude_file_globs": [
+    "*.env",
+    ".env*",
+    "*.log",
+    "*.tmp",
+    "*.bak",
+    "*.pyc",
+    "*.sqlite",
+    "*.db",
+    "*.db-wal",
+    "*.db-shm",
+    "*secret*",
+    "*secrets*",
+    "*credential*",
+    "*credentials*",
+    "*token*",
+    "*tokens*"
+  ],
+  "include_markdown_globs": [
+    "*.md",
+    "*.mdx"
+  ],
+  "asset_extensions": [
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".webp",
+    ".svg",
+    ".pdf",
+    ".drawio",
+    ".mermaid",
+    ".mmd"
+  ],
+  "skip_markdown_name_contains": [
+    "node_modules"
+  ],
+  "copy_unreferenced_assets": false,
+  "preserve_hierarchy": true,
+  "generate_index": true,
+  "normalize_generated_markdown": true,
+  "fix_source_markdown": false,
+  "max_file_size_mb": 15
+}

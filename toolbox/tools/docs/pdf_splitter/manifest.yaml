@@ -1,0 +1,41 @@
+id: toolbox.docs.pdf_splitter
+name: Pdf Splitter
+type: toolbox_tool
+language: python
+status: active
+owner: QiLabs
+
+module:
+  package: tools.docs.pdf_splitter
+  file: pdf_splitter.py
+  class_name: BulkPdfSplitterTool
+  entrypoint: BulkPdfSplitterTool
+
+toolbox:
+  ui_enabled: true
+  bucket: docs
+  category: docs
+  launch_surface:
+    - QiOne Desktop Tools
+  requires_target_directory: true
+
+runtime:
+  requires_network: false
+  requires_secrets: false
+
+safety:
+  supports_dry_run: true
+  supports_live_run: true
+  deletes_files: unknown
+  moves_files: unknown
+  modifies_files: unknown
+  review_before_live: true
+
+paths:
+  source: tools/docs/pdf_splitter/pdf_splitter.py
+  readme: tools/docs/pdf_splitter/README.md
+
+tags:
+  - toolbox
+  - docs
+  - qione

@@ -1,0 +1,28 @@
+# Maps vault locations → QiDecimal prefixes for missing IDs
+prefixes:
+  # Personal KB (2_QsKb)
+  "2_QsKb/2.00_Inbox": "2.00.00"
+  "2_QsKb/2.10_START": "2.10.00"
+  "2_QsKb/2.20_Journal": "2.20.00"
+  "2_QsKb/2.30_Projects": "2.30.00"
+  "2_QsKb/2.40_OPS": "2.40.00"
+
+  # Internal Qi KB (3_QiKb) — kept here for future, but routing stays personal-only by default
+  "3_QiKb/3.10_Inbox": "3.10.00"
+  "3_QiKb/3.20_Knowledge": "3.20.00"
+
+  # Tools
+  "7_Tools/7.10_python": "7.10.00"
+  "7_Tools/7.20_node": "7.20.00"
+
+defaults:
+  realm_prefix:
+    "2_QsKb": "2.99.00"
+    "3_QiKb": "3.99.00"
+    "4_Clients": "4.99.00"
+    "5_Apps": "5.99.00"
+    "6_Data": "6.99.00"
+    "7_Tools": "7.99.00"
+  type: "SYS"
+  sequence_pad: 2
+

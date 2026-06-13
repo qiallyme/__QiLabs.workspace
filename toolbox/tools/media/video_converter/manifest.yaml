@@ -1,0 +1,41 @@
+id: toolbox.media.video_converter
+name: Video Converter
+type: toolbox_tool
+language: python
+status: active
+owner: QiLabs
+
+module:
+  package: tools.media.video_converter
+  file: video_converter.py
+  class_name: VideoConverterTool
+  entrypoint: VideoConverterTool
+
+toolbox:
+  ui_enabled: true
+  bucket: media
+  category: media
+  launch_surface:
+    - QiOne Desktop Tools
+  requires_target_directory: true
+
+runtime:
+  requires_network: false
+  requires_secrets: false
+
+safety:
+  supports_dry_run: true
+  supports_live_run: true
+  deletes_files: unknown
+  moves_files: unknown
+  modifies_files: unknown
+  review_before_live: true
+
+paths:
+  source: tools/media/video_converter/video_converter.py
+  readme: tools/media/video_converter/README.md
+
+tags:
+  - toolbox
+  - media
+  - qione

@@ -1,0 +1,54 @@
+logs_dir: ".housekeeping/logs"
+lockfile: ".housekeeping/housekeeper.lock"
+
+codex:
+  config: "1_QiEos/1.50_Meta/metadata/qi_codex.config.yaml"
+  enabled: true
+
+inbox:
+  enabled: true
+  path: "2_QsKb/2.00_Inbox"          # personal-only inbox
+  csv:
+    enabled: true
+    mapping_preset: ""               
+    out_dir: "2_QsKb/2.10_START"     # staging stays personal
+  ocr:
+    enabled: true
+    mode: "images"                    # PDF -> images -> OCR
+    engine: "tesseract"               # pytesseract
+    dpi: 300
+    lang: "eng+spa"
+    as_markdown: true                 # <<< always write .md
+    max_pages: 0
+    poppler_path: ""                  # e.g., "C:/tools/poppler-24.08.0/Library/bin" (set your actual Poppler bin path here)
+
+routing:
+  enabled: true
+  by_realm:
+    "2_QsKb": "2_QsKb/2.40_OPS"
+    # Never route to 3_QiKb/4_Clients unless front matter explicitly sets:
+    #   realm: 3_QiKb|4_Clients AND privacy: shared|public
+
+validate:
+  enabled: true
+  force: false
+
+naming:
+  enabled: true
+  enforce_slug_from_title: true     # Only updates front matter slug, never renames files
+  # File renaming is disabled to preserve:
+  # - QiDecimal prefixes (2.30.10-01_...)
+  # - Date prefixes (2025-11-04_...)
+  # - Ordering prefixes (01_, 02_, etc.)
+  autoname:
+    enabled: true
+    base_dir: "."                    # repo root
+    index: "meta/QiIndex.csv"
+    write: false                     # first pass dry-run; flip to true when you're happy
+
+backfill:
+  enabled: false                     # set true to run backfill on every housekeeping run
+
+post:
+  build_index: true
+  legacy_organizer: false            # set true only when you want to run your old organizer

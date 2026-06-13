@@ -1,0 +1,21 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^(00_QiAccess/docs/|01_Q/docs/)
+      - id: end-of-file-fixer
+        exclude: ^(00_QiAccess/docs/|01_Q/docs/)
+      - id: check-yaml
+      - id: check-json
+      - id: check-added-large-files
+        args: ["--maxkb=5000"]
+
+  - repo: local
+    hooks:
+      - id: qidocs-check
+        name: QiDocs tree-aware docs check
+        entry: python scripts/docs_build/sys_docs_compiler.py --root . --target 00_QiAccess/docs --check
+        language: system
+        pass_filenames: false
+        always_run: true

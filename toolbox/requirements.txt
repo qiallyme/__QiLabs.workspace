@@ -1,0 +1,8 @@
+send2trash
+rapidfuzz
+watchdog
+pandas
+python-dateutil
+rapidfuzz
+PyPDF2
+requests

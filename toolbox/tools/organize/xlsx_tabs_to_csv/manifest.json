@@ -1,0 +1,38 @@
+{
+  "name": "xlsx_tabs_to_csv",
+  "type": "standalone_script",
+  "language": "python",
+  "entrypoint": "xlsx_tabs_to_csv.py",
+  "interactive": true,
+  "purpose": "Export every worksheet tab from one XLSX workbook into separate CSV files with an index file.",
+  "inputs": [
+    {
+      "name": "xlsx_file",
+      "type": "file",
+      "required": true,
+      "extensions": [".xlsx"]
+    },
+    {
+      "name": "output_folder",
+      "type": "folder",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "csv_files",
+      "type": "folder"
+    },
+    {
+      "name": "_index.csv",
+      "type": "file"
+    }
+  ],
+  "dependencies": [
+    "openpyxl"
+  ],
+  "commands": {
+    "interactive": "python xlsx_tabs_to_csv.py",
+    "direct": "python xlsx_tabs_to_csv.py path/to/workbook.xlsx --out path/to/output --overwrite"
+  }
+}

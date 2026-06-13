@@ -1,0 +1,212 @@
+flowchart TD
+    %% === PROJECT GOALS ===
+    %% Ultimate Goal: Premium Glassmorphic COPD Care MVP (QiHome / Mom Care)
+    %% Current Goal: MomsCare MVP Development (Today Screen + Schema)
+
+    %% === START ===
+    %% @project_start [start, closed, 2026-04-04, nam]
+    project_start("Project Start<br/><sub>Initial auditing of USBLegalAidv2<br/>UI to identify high-contrast<br/>hardcoded whites and visual debt</sub>")
+
+    %% @ultimate_goal [end, opened, 2026-04-09, nam]
+    ultimate_goal("Premium COPD Care MVP<br/><sub>A fully voice-integrated health<br/>dashboard for COPD patients with<br/>STT logic and automated logging</sub>")
+
+    %% === COMPLETED WORK ===
+    %% @consolidation_success [ai-task, closed, 2026-04-19, nam]
+    consolidation_success("Portal Consolidation Success<br/><sub>Resolved all build conflicts,<br/>fixed broken imports, and verified<br/>routing for all domain modules in<br/>a single unified SPA front-door.</sub>")
+
+    %% @homepage_setup [ai-task, closed, 2026-04-21, nam]
+    homepage_setup("Homepage Workspace Repair<br/><sub>Resolved project-wide git merge<br/>conflicts in pnpm-workspace.yaml<br/>and multiple package.json files<br/>to unblock workspace installation.</sub>")
+
+    %% @web_only_decision [human-task, closed, 2026-04-21, user]
+    web_only_decision("Web-Only Architecture Decision<br/><sub>Pivoted from desktop app to<br/>web-only delivery: local server<br/>dashboard (Homepage) and cloud<br/>fallback (Cloudflare Pages).</sub>")
+
+    %% @homepage_config [ai-task, closed, 2026-04-21, nam]
+    homepage_config("QiAccess Dashboard Config<br/><sub>Updated root docker-compose.yml<br/>and all config/*.yaml files<br/>with production-ready service<br/>links and server integrations.</sub>")
+
+    %% @homepage_polish [ai-task, closed, 2026-04-21, nam]
+    homepage_polish("QiAccess Dashboard Polish<br/><sub>Injected custom JS/CSS to brand<br/>the UI as 'QiAccess', fix meta<br/>tags, and nuke visible screen<br/>reader labels.</sub>")
+
+    %% @springboard_ui [ai-task, closed, 2026-04-21, nam]
+    springboard_ui("SpringBoard UI Grid<br/><sub>Transformed the dashboard into<br/>an iPhone-style grid with glass<br/>squircles, centered labels, and<br/>the Blossom Valley wallpaper.</sub>")
+
+    %% @repo_pruning [ai-task, closed, 2026-04-21, nam]
+    repo_pruning("Repository Locale Pruning<br/><sub>Removed 43 unnecessary locale<br/>directories, keeping only English<br/>and Spanish to minimize repo<br/>footprint and build overhead.</sub>")
+
+    %% @test_pruning [ai-task, closed, 2026-04-21, nam]
+    test_pruning("Test Suite Decommission<br/><sub>Removed all unit tests, test<br/>utilities, and vitest configs<br/>since the app is now a pure<br/>configuration management door.</sub>")
+
+    %% @skeleton_removal [ai-task, closed, 2026-04-21, nam]
+    skeleton_removal("Skeleton Directory Cleanup<br/><sub>Removed src/skeleton as the<br/>production config/ folder is<br/>now the sole source of truth.</sub>")
+
+    %% @compose_v3_fix [ai-task, closed, 2026-04-21, nam]
+    compose_v3_fix("Interface Binding & Asset Fix<br/><sub>Updated docker-compose.yml to<br/>bind to 0.0.0.0 and mount local<br/>public/ folder for UI assets.</sub>")
+
+    %% @pwa_asset_generation [ai-task, closed, 2026-04-21, nam]
+    pwa_asset_generation("PWA Asset Generation<br/><sub>Used ImageMagick to generate a<br/>full suite of favicons, touch<br/>icons, and manifest assets from<br/>the QiAccess squircle source.</sub>")
+
+    %% @project_centric_restructure [ai-task, closed, 2026-04-21, nam]
+    project_centric_restructure("Project-Centric Restructure<br/><sub>Consolidated images into config/<br/>and aligned paths to treat the<br/>app as a deployable bundle rather<br/>than a raw engine instance.</sub>")
+
+    %% @local_web_split [ai-task, closed, 2026-04-21, nam]
+    local_web_split("Local/Web Tiered Structure<br/><sub>Split the project into local/<br/>and web/ directories to support<br/>the tiered dashboard surfaces<br/>(local server vs cloud fallback).</sub>")
+
+    %% @web_portal_dev [ai-task, closed, 2026-04-21, nam]
+    web_portal_dev("Web Portal Development<br/><sub>Built the cloud fallback portal<br/>with Bento UI and lightweight<br/>connectivity sensing for local<br/>server status.</sub>")
+
+    %% @worker_api_dev [ai-task, closed, 2026-04-21, nam]
+    worker_api_dev("Standalone Worker API<br/><sub>Created /worker with D1 binding,<br/>TypeScript API, and secure CRUD<br/>for bookmarks to keep the front<br/>door static and fast.</sub>")
+
+    %% === COMPLETED WORK ===
+    %% @moms_care_scaffold [ai-task, closed, 2026-04-21, nam]
+    moms_care_scaffold("MomsCare App Scaffolding<br/><sub>Initialized pnpm workspace<br/>sub-apps: frontend (Vite) and<br/>worker (Wrangler) within the<br/>apps/MomsCare directory.</sub>")
+
+    %% @moms_care_schema [ai-task, closed, 2026-04-21, nam]
+    moms_care_schema("QiCare Domain Schema v1.1<br/><sub>Deployed the final detailed<br/>ERD schema to Supabase,<br/>including AI reviews, CPAP<br/>monitoring, and discharge docs.</sub>")
+
+    %% @live_dashboard_interaction [ai-task, closed, 2026-04-21, nam]
+    live_dashboard_interaction("Live Dashboard Interaction<br/><sub>Activated all UI buttons,<br/>implemented regimen logging<br/>logic, and resolved 401 errors<br/>by updating RLS policies.</sub>")
+
+    %% @legacy_port [ai-task, closed, 2026-04-21, nam]
+    legacy_port("Legacy Porting Excellence<br/><sub>Integrated high-value logic<br/>from .legacy/ folder, including<br/>the Quick Log grid and premium<br/>design tokens for consistency.</sub>")
+
+    %% @momscare_repo_split [ai-task, closed, 2026-04-21, nam]
+    momscare_repo_split("MomsCare Repository Split<br/><sub>Successfully decoupled MomsCare<br/>from the 1.3GB QiLabs monorepo<br/>by initializing a standalone<br/>git repository and pushing to<br/>the dedicated GitHub remote.</sub>")
+
+    %% @deployment_lockfile_fix [ai-task, closed, 2026-04-21, nam]
+    deployment_lockfile_fix("Deployment Lockfile Sync<br/><sub>Synchronized package-lock.json<br/>files for both frontend and<br/>worker sub-apps to resolve<br/>Cloudflare Pages build errors.</sub>")
+
+    %% @worker_config_sync [ai-task, closed, 2026-04-21, nam]
+    worker_config_sync("Worker Config Sync<br/><sub>Updated wrangler.json to<br/>match Cloudflare dashboard<br/>settings, ensuring consistent<br/>deployment name and variables.</sub>")
+
+    %% @care_schema_types [ai-task, closed, 2026-04-21, nam]
+    care_schema_types("Care Schema Types<br/><sub>Generated TypeScript types<br/>for the 'care' Supabase schema<br/>using CLI and integrated them<br/>into frontend and worker.</sub>")
+
+    %% @type_import_fix [ai-task, closed, 2026-04-21, nam]
+    type_import_fix("Type Import Fix<br/><sub>Resolved TypeScript error by<br/>switching to type-only import<br/>for Database, complying with<br/>verbatimModuleSyntax rules.</sub>")
+
+    %% @qinexus_reorg_ph0 [ai-task, closed, 2026-05-10, antigravity]
+    qinexus_reorg_ph0("QiNexus Reorg Phase 0<br/><sub>Adopted numeric root-band doctrine<br/>(00-130) and established cleanup<br/>hierarchy for safe asset relocation<br/>and legacy record classification.</sub>")
+
+    %% @qiaccess_ui_repair [ai-task, closed, 2026-05-10, antigravity]
+    qiaccess_ui_repair("QiAccess UI & Registry Sync<br/><sub>Restored local build stability by<br/>fixing pnpm resolution, updating<br/>service registry links, and<br/>streamlining the Homepage UI.</sub>")
+
+    %% @brain_alignment_final [ai-task, closed, 2026-05-12, antigravity]
+    brain_alignment_final("System Brain Alignment<br/><sub>Completed final structural alignment<br/>with strict 10-70 numbering across<br/>all layers. Resolved UI numbering<br/>collisions and fixed build errors.</sub>")
+
+    %% === COMPLETED WORK ===
+    %% @repo_sync_walk [ai-task, closed, 2026-05-15, antigravity]
+    repo_sync_walk("Repository Sync Walk<br/><sub>Performed a comprehensive walk<br/>of all sub-repos in QiLabs and<br/>QiNexus workspaces, committing<br/>pending changes and pushing to<br/>respective remotes.</sub>")
+
+    %% @qilegacy_build_fix [ai-task, closed, 2026-05-15, antigravity]
+    qilegacy_build_fix("QiLegacy Build Fix<br/><sub>Resolved PostCSS configuration<br/>conflict by isolating the sub-app<br/>from root Tailwind CSS plugins<br/>that were causing build failures.</sub>")
+
+    %% @qilegacy_restructure_cleanup [ai-task, closed, 2026-05-19, antigravity]
+    qilegacy_restructure_cleanup("QiLegacy Consolidation & Cleanup<br/><sub>Audited files, removed duplicates,<br/>flattened templates into docs/,<br/>quarantined legacy HTML files,<br/>and updated search indices.</sub>")
+
+    %% @clinical_vault_format [ai-task, closed, 2026-05-24, antigravity]
+    clinical_vault_format("Clinical Vault Reformat<br/><sub>Standardized and reformatted all<br/>ADHD markdown files in the clinical<br/>vault, adding YAML front matter and<br/>complying with repo file naming rules.</sub>")
+
+    %% @docs_consolidation [ai-task, closed, 2026-05-26, antigravity]
+    docs_consolidation("QiAccess Documentation Sweep<br/><sub>Drafted Service Map, QiIngest<br/>Pipeline architecture, core workflows,<br/>automation backlog, and active state<br/>receipt files. Identified Wiki.js<br/>pages and port binding schemas.</sub>")
+
+    %% @docs_alignment [ai-task, closed, 2026-05-26, antigravity]
+    docs_alignment("Documentation Alignment<br/><sub>Drafted ingestion pipeline, scanner,<br/>approval flow, server runbooks, and<br/>overview pages directly inside the<br/>existing 10-70 target hierarchy.</sub>")
+
+    %% @spreadsheet_deduplication [ai-task, closed, 2026-05-26, antigravity]
+    spreadsheet_deduplication("Spreadsheet Deduplication<br/><sub>Executed four passes: purged 180 exact dupes,<br/>19 semantic Notion copies, 17 subset files,<br/>and 46 empty tables. Merged splits and generated<br/>an 843-file active master inventory.</sub>")
+
+    %% @policy_reorganization [ai-task, closed, 2026-06-01, antigravity]
+    policy_reorganization("QiEOS Policy Reorganization<br/><sub>Reorganized the 40_policies folder<br/>into domain-specific subdirectories<br/>(architecture, development, etc.),<br/>updated the main index, and aligned<br/>repo_rules.yaml RR-003 topology.</sub>")
+
+    %% @git_indexing_fix [ai-task, closed, 2026-06-01, antigravity]
+    git_indexing_fix("Git Indexing Resolution<br/><sub>Added 50_QiNexus/ to .gitignore to<br/>exclude the Google Drive stream<br/>folder containing .gdoc files,<br/>resolving the fatal git add error.</sub>")
+
+    %% === RECENT WORK ===
+    subgraph recent [RECENT]
+        git_indexing_fix
+    end
+
+    %% === FUTURE WORK ===
+    %% @paperless_setup [ai-task, opened, 2026-04-21, nam]
+    paperless_setup("Paperless Intake Setup<br/><sub>Deploy Paperless-ngx stack to<br/>handle document digitization and<br/>OCR for the incoming mail pile.</sub>")
+
+    
+    %% @qi_queue_worker [ai-task, opened, 2026-04-21, nam]
+    qi_queue_worker("Qi Queue / Intake Worker<br/><sub>Implement the local control plane<br/>worker for OCR extraction and<br/>automation tasks.</sub>")
+
+    %% @legacy_cleanup [human-task, opened, 2026-04-19, user]
+    legacy_cleanup("Decommission Legacy Apps<br/><sub>Systematically archive or delete<br/>standalone app folders (qitax, qicase,<br/>etc.) now that qi1ne-portal is the  production source of truth.</sub>")
+
+    %% === CONNECTIONS ===
+    project_start --> consolidation_success
+    consolidation_success --> homepage_setup
+    homepage_setup --> web_only_decision
+    web_only_decision --> homepage_config
+    homepage_config --> homepage_polish
+    homepage_polish --> moms_care_scaffold
+    moms_care_scaffold --> moms_care_schema
+    moms_care_schema --> live_dashboard_interaction
+    live_dashboard_interaction --> legacy_port
+    legacy_port --> momscare_repo_split
+    momscare_repo_split --> deployment_lockfile_fix
+    deployment_lockfile_fix --> worker_config_sync
+    worker_config_sync --> care_schema_types
+    care_schema_types --> type_import_fix
+    type_import_fix --> qinexus_reorg_ph0
+    qinexus_reorg_ph0 --> qiaccess_ui_repair
+    qiaccess_ui_repair --> brain_alignment_final
+    brain_alignment_final --> repo_sync_walk
+    repo_sync_walk --> qilegacy_build_fix
+    qilegacy_build_fix --> qilegacy_restructure_cleanup
+    qilegacy_restructure_cleanup --> clinical_vault_format
+    clinical_vault_format --> docs_consolidation
+    docs_consolidation --> docs_alignment
+    docs_alignment --> paperless_setup
+    docs_alignment --> spreadsheet_deduplication
+    spreadsheet_deduplication --> policy_reorganization
+    policy_reorganization --> git_indexing_fix
+    paperless_setup --> qi_queue_worker
+    qi_queue_worker -.-> legacy_cleanup
+    git_indexing_fix -.-> ultimate_goal
+    legacy_cleanup -.-> ultimate_goal
+
+    %% === STYLES ===
+    %% Closed tasks (soft purple)
+    style project_start fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style consolidation_success fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style homepage_setup fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style web_only_decision fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style homepage_config fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style homepage_polish fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style moms_care_scaffold fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style moms_care_schema fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style live_dashboard_interaction fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style legacy_port fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style momscare_repo_split fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style deployment_lockfile_fix fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style worker_config_sync fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style care_schema_types fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style type_import_fix fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style qinexus_reorg_ph0 fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style qiaccess_ui_repair fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style brain_alignment_final fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style repo_sync_walk fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style qilegacy_build_fix fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style qilegacy_restructure_cleanup fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style clinical_vault_format fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style docs_consolidation fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style docs_alignment fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style spreadsheet_deduplication fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style policy_reorganization fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+
+    %% Recent node (highlighted purple)
+    style git_indexing_fix fill:#2d1f4e,stroke:#c084fc,color:#e9d5ff,stroke-width:2px
+
+    %% Recent subgraph (dashed border)
+    style recent fill:transparent,stroke:#c084fc,color:#c084fc,stroke-width:2px,stroke-dasharray:5 5
+
+    %% Open tasks (soft green)
+    style ultimate_goal fill:#1a1a2e,stroke:#4ade80,color:#86efac,stroke-width:1px
+    style legacy_cleanup fill:#1a1a2e,stroke:#4ade80,color:#86efac,stroke-width:1px
+    style paperless_setup fill:#1a1a2e,stroke:#4ade80,color:#86efac,stroke-width:1px
+    style qi_queue_worker fill:#1a1a2e,stroke:#4ade80,color:#86efac,stroke-width:1px
