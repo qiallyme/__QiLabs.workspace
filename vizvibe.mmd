@@ -121,9 +121,12 @@ flowchart TD
     %% @git_indexing_fix [ai-task, closed, 2026-06-01, antigravity]
     git_indexing_fix("Git Indexing Resolution<br/><sub>Added 50_QiNexus/ to .gitignore to<br/>exclude the Google Drive stream<br/>folder containing .gdoc files,<br/>resolving the fatal git add error.</sub>")
 
+    %% @workspace_relocation [ai-task, closed, 2026-06-13, antigravity]
+    workspace_relocation("Workspace Relocation<br/><sub>Relocated workspace configurations,<br/>tooling folders (.github, .qios,<br/>.vscode, scripts, toolbox), and<br/>needed root files to the dedicated<br/>__QiLabs.workspace sub-repository</sub>")
+
     %% === RECENT WORK ===
     subgraph recent [RECENT]
-        git_indexing_fix
+        workspace_relocation
     end
 
     %% === FUTURE WORK ===
@@ -167,7 +170,8 @@ flowchart TD
     policy_reorganization --> git_indexing_fix
     paperless_setup --> qi_queue_worker
     qi_queue_worker -.-> legacy_cleanup
-    git_indexing_fix -.-> ultimate_goal
+    git_indexing_fix --> workspace_relocation
+    workspace_relocation -.-> ultimate_goal
     legacy_cleanup -.-> ultimate_goal
 
     %% === STYLES ===
@@ -198,9 +202,8 @@ flowchart TD
     style docs_alignment fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
     style spreadsheet_deduplication fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
     style policy_reorganization fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
-
-    %% Recent node (highlighted purple)
-    style git_indexing_fix fill:#2d1f4e,stroke:#c084fc,color:#e9d5ff,stroke-width:2px
+    style git_indexing_fix fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style workspace_relocation fill:#2d1f4e,stroke:#c084fc,color:#e9d5ff,stroke-width:2px
 
     %% Recent subgraph (dashed border)
     style recent fill:transparent,stroke:#c084fc,color:#c084fc,stroke-width:2px,stroke-dasharray:5 5
