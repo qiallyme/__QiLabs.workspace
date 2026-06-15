@@ -22,7 +22,7 @@ EXPECTED_ROOTS = [
     "40_QiCapture",
     "50_QiNexus",
     "60_QiApps",
-    "70_QiConnect",
+    "60_QiConnect",
     "packages",
     "scripts",
     "toolbox",
@@ -46,7 +46,7 @@ EXPECTED_QINEXUS_BUCKETS = [
     "13_system",
 ]
 
-DUPLICATE_QINEXUS_ROOTS = ["20_qinexus", "30_qiarchive", "40_qisystem", "70_qiconnect"]
+DUPLICATE_QINEXUS_ROOTS = ["20_qinexus", "30_qiarchive", "40_qisystem", "60_qiconnect"]
 GENERATED_NAMES = {
     ".git",
     ".next",
@@ -197,7 +197,7 @@ class QiLabsStructureCheckerTool(BaseTool):
                     "scripts_too_heavy",
                     path,
                     f"scripts/{name} looks like real logic.",
-                    "Keep scripts thin; move tools to toolbox, capture logic to 40_QiCapture, connectors to 70_QiConnect, server/deploy to 30_QiServer.",
+                    "Keep scripts thin; move tools to toolbox, capture logic to 40_QiCapture, connectors to 60_QiConnect, server/deploy to 30_QiServer.",
                 )
 
     def check_long_paths(self, root, findings, threshold, log):

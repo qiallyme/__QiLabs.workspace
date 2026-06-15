@@ -1,19 +1,11 @@
 {
 	"folders": [
 		{
-			"name": "QiLabs (Root)",
 			"path": ".."
-		},
-		{
-			"name": "QiNexus",
-			"path": "G:/My Drive/20_qinexus"
-		},
-		{
-			"name": "QiNotesSync",
-			"path": "../70_QiConnect/QiNotesSync"
 		}
 	],
 	"settings": {
-		"python.defaultInterpreterPath": "C:\\Python314\\python.exe"
+		"python.defaultInterpreterPath": "C:\\Python314\\python.exe",
+		"files.autoSave": "afterDelay"
 	}
 }

@@ -124,9 +124,12 @@ flowchart TD
     %% @workspace_relocation [ai-task, closed, 2026-06-13, antigravity]
     workspace_relocation("Workspace Relocation<br/><sub>Relocated all configurations, tooling<br/>(.github, .qios, .vscode, scripts,<br/>toolbox), package and lock files to<br/>__QiLabs.workspace, cleaning the parent<br/>root of all root-level files</sub>")
 
+    %% @structure_cleanup [ai-task, closed, 2026-06-15, antigravity]
+    structure_cleanup("Workspace Cleanup & Audit<br/><sub>Archived legacy files in qiportals,<br/>updated structure checker references,<br/>and created security and sync reviews<br/>to resolve workspace debt safely</sub>")
+
     %% === RECENT WORK ===
     subgraph recent [RECENT]
-        workspace_relocation
+        structure_cleanup
     end
 
     %% === FUTURE WORK ===
@@ -171,7 +174,8 @@ flowchart TD
     paperless_setup --> qi_queue_worker
     qi_queue_worker -.-> legacy_cleanup
     git_indexing_fix --> workspace_relocation
-    workspace_relocation -.-> ultimate_goal
+    workspace_relocation --> structure_cleanup
+    structure_cleanup -.-> ultimate_goal
     legacy_cleanup -.-> ultimate_goal
 
     %% === STYLES ===
@@ -203,7 +207,8 @@ flowchart TD
     style spreadsheet_deduplication fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
     style policy_reorganization fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
     style git_indexing_fix fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
-    style workspace_relocation fill:#2d1f4e,stroke:#c084fc,color:#e9d5ff,stroke-width:2px
+    style workspace_relocation fill:#1a1a2e,stroke:#a78bfa,color:#c4b5fd,stroke-width:1px
+    style structure_cleanup fill:#2d1f4e,stroke:#c084fc,color:#e9d5ff,stroke-width:2px
 
     %% Recent subgraph (dashed border)
     style recent fill:transparent,stroke:#c084fc,color:#c084fc,stroke-width:2px,stroke-dasharray:5 5

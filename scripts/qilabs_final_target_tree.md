@@ -14,7 +14,7 @@ C:\QiLabs\
   50_QiNexus\
     My Drive\
   60_QiApps\
-  70_QiConnect\
+  60_QiConnect\
 
   packages\
   scripts\
@@ -44,7 +44,7 @@ C:\QiLabs\
 ## Rules
 
 - `50_QiNexus\My Drive` is QiNexus.
-- Do not keep duplicate root-system folders inside `My Drive`, such as `20_qinexus`, `30_qiarchive`, `40_qisystem`, or `70_qiconnect`.
+- Do not keep duplicate root-system folders inside `My Drive`, such as `20_qinexus`, `30_qiarchive`, `40_qisystem`, or `60_qiconnect`.
 - `scripts` is thin repo automation only.
 - `toolbox` is reusable human-operated tools.
 - Generated/cache folders should be ignored or disposable: `.next`, `dist`, `build`, `.venv`, `venv`, `__pycache__`, `.cache`, `tmp`, `temp`.

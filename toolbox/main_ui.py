@@ -188,6 +188,21 @@ class QiOneShell:
         self.sidebar_canvas.create_window((0, 0), window=self.sidebar_inner, anchor="nw", width=280)
         self.sidebar_canvas.configure(yscrollcommand=sidebar_scrollbar.set)
 
+        # Mouse wheel scrolling for Windows
+        def _on_sidebar_mousewheel(event):
+            self.sidebar_canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+
+        def _bind_sidebar_wheel(_event=None):
+            self.sidebar_canvas.bind_all("<MouseWheel>", _on_sidebar_mousewheel)
+
+        def _unbind_sidebar_wheel(_event=None):
+            self.sidebar_canvas.unbind_all("<MouseWheel>")
+
+        self.sidebar_canvas.bind("<Enter>", _bind_sidebar_wheel)
+        self.sidebar_canvas.bind("<Leave>", _unbind_sidebar_wheel)
+        self.sidebar_inner.bind("<Enter>", _bind_sidebar_wheel)
+        self.sidebar_inner.bind("<Leave>", _unbind_sidebar_wheel)
+
         self.sidebar_canvas.pack(side="left", fill="both", expand=True, padx=(10, 0), pady=(0, 10))
         sidebar_scrollbar.pack(side="right", fill="y", pady=(0, 10))
 
@@ -275,6 +290,20 @@ class QiOneShell:
         self.tool_settings_canvas.create_window((0, 0), window=self.tool_ui_container, anchor="nw", width=420)
         self.tool_settings_canvas.configure(yscrollcommand=settings_scroll.set)
 
+        def _on_settings_mousewheel(event):
+            self.tool_settings_canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+
+        def _bind_settings_wheel(_event=None):
+            self.tool_settings_canvas.bind_all("<MouseWheel>", _on_settings_mousewheel)
+
+        def _unbind_settings_wheel(_event=None):
+            self.tool_settings_canvas.unbind_all("<MouseWheel>")
+
+        self.tool_settings_canvas.bind("<Enter>", _bind_settings_wheel)
+        self.tool_settings_canvas.bind("<Leave>", _unbind_settings_wheel)
+        self.tool_ui_container.bind("<Enter>", _bind_settings_wheel)
+        self.tool_ui_container.bind("<Leave>", _unbind_settings_wheel)
+
         self.tool_settings_canvas.pack(side="left", fill="both", expand=True)
         settings_scroll.pack(side="right", fill="y")
 
@@ -310,6 +339,21 @@ class QiOneShell:
         self.run_list_inner.bind("<Configure>", lambda _event: self.run_list_canvas.configure(scrollregion=self.run_list_canvas.bbox("all")))
         self.run_list_canvas.create_window((0, 0), window=self.run_list_inner, anchor="nw", width=730)
         self.run_list_canvas.configure(yscrollcommand=run_scroll.set)
+
+        def _on_runlist_mousewheel(event):
+            self.run_list_canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+
+        def _bind_runlist_wheel(_event=None):
+            self.run_list_canvas.bind_all("<MouseWheel>", _on_runlist_mousewheel)
+
+        def _unbind_runlist_wheel(_event=None):
+            self.run_list_canvas.unbind_all("<MouseWheel>")
+
+        self.run_list_canvas.bind("<Enter>", _bind_runlist_wheel)
+        self.run_list_canvas.bind("<Leave>", _unbind_runlist_wheel)
+        self.run_list_inner.bind("<Enter>", _bind_runlist_wheel)
+        self.run_list_inner.bind("<Leave>", _unbind_runlist_wheel)
+
         self.run_list_canvas.pack(side="left", fill="both", expand=True)
         run_scroll.pack(side="right", fill="y")
 
@@ -408,6 +452,9 @@ class QiOneShell:
                 anchor="w",
                 justify="left",
             ).pack(fill="x")
+
+        self.sidebar_canvas.after_idle(lambda: self.sidebar_canvas.configure(scrollregion=self.sidebar_canvas.bbox("all")))
+        self.sidebar_canvas.after_idle(lambda: self.sidebar_canvas.yview_moveto(0))
 
     def browse(self):
         path = filedialog.askdirectory(title="Select target directory")
