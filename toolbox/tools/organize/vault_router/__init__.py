@@ -1,5 +1,3 @@
-"""Tool module export for QiOne Desktop Tools."""
-
-from .vault_router import VaultRouterTool
-
-__all__ = ["VaultRouterTool"]
+﻿# Intentionally quiet for QiLabs dynamic plugin host.
+# Old contents backed up by RUN_TOOLBOX_BUILDER.bat under _archive.
+# Plugins are loaded by manifest target file path, not by package auto-import.
